@@ -1,0 +1,49 @@
+.zj-feed {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: $large;
+
+	.zj-feed-actions {
+		height: $base*2;
+
+		.zj-branding {
+			@extend .h3;
+			font-weight: 500;
+			line-height: $base*2;
+			padding: 0 $base;
+			position: absolute;
+		}
+
+		.btn-group {
+	 		@include flexbox();
+			@include align-content(flex-start);
+			@include align-items(flex-start);
+			@include flex-flow(row wrap);
+			@include justify-content(flex-start);
+			background-color: red;
+			position: absolute;
+			right: 0;
+			top: 0;
+
+			.btn {
+				@include borders(0,0,0,2px);
+				line-height: $base*2;
+				padding: 0 $base/2;
+			}
+		}
+	}
+
+	.zj-feed-items {
+		@include borders(2px,0,0,0);
+		background-color: #999;
+		bottom: 0;
+		left: 0;
+		overflow-y: scroll;
+		padding: $base $base*2;
+		position: absolute;
+		right: 0;
+		top: $base*2;
+	}
+}

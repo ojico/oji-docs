@@ -1,0 +1,8 @@
+.zj-panel {
+	&.zj-dash {
+		background-color: white;
+		padding-right: $base*3;
+		width: $width-zj-apps;
+		z-index: 1;
+	}
+}

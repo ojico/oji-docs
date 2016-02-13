@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+    {% include head.html %}
+
+    <body class="docs-wiki">
+
+        <aside class="wiki-sidebar">
+            <h4 class="breadcrumbs"><a href="/index.html" class="link-home">Zoji Docs</a> / Wiki</h4>
+
+            {% for category in site.categories %}
+            <ul class="wiki-sidebar-group">
+                <li class="h5">{{ category | first }}</li>
+                {% for posts in category %}
+                <li>
+                {% for post in posts %}<a href="{{ post.url }}" class="h3">{{ post.title }}</a>{% endfor %}
+                </li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </aside>
+
+        <div class="wiki-container">
+
+        {{ content }}
+
+        </div>
+
+    </body>
+
+</html>

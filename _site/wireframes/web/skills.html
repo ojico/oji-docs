@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+
+  <title>Zoji Docs</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <script type="text/javascript" src="/js/lib/modernizr.js" ></script>
+<script type="text/javascript" src="/js/lib/jquery-2.1.1.min.js" ></script>
+
+<script type="text/javascript" src="/js/layout.js" ></script>
+<script type="text/javascript" src="/js/wireframes/layout.js" ></script>
+<script type="text/javascript" src="/js/wireframes/web/states.js" ></script>
+ 
+</head>
+
+
+    <body class="docs-wireframes">
+
+    	<header class="wf-header">
+    		<h4>
+    			<a href="/index.html">Zoji Docs</a> / <a href="/wireframes/index.html">Wireframes</a> / <a href="/wireframes//web">web app</a> / skills
+    			<span class="pull-right wf-tools">
+                    <a href="#" class="toggle-zoom">Toggle States</a>
+                    <!--Turn prototype states on/off
+                    example: new dive added by shop adds alert status to logbook and new dives-->
+                    <a href="#" class="toggle-zoom">Toggle Zoom</a>
+    				<a href="#" class="toggle-notes">Toggle Notes</a>
+                    <a href="#" class="reset-session">Reset Session</a>
+                    <!-- if content (like news feed "new app added" bulletin) is dismissed, restore prototype to default state-->
+    			</span>
+                
+    		</h4>
+    	</header>
+
+        <div class="wf-page">
+	<div class="wf-canvas">
+
+		<div class="overlay overlay-search">Search</div>
+
+		<div class="zj-wrapper" data-focus="index">
+
+			<div class="box zj-panel zj-dash">
+				<div class="zj-feed">
+	<!-- collection of external/internal links to content, updates
+	case: one of zoji internal resources adds content relevant to user, short blurb about appears in feed
+	case: external article/video -->
+
+	<div class="zj-feed-actions">
+		<div class="zj-branding">zoji</div>
+		<div class="btn-group">
+			<a href="#" class="btn toggle-feed-filter">Filter Feed Category/Type</a>
+			<!-- This should toggle an overlay with big tiles for different content projects,
+			clicking one of the options takes you to a dedicated full bleed view of content project (gear reviews, interactive documentatary series, news from zoji kids, etc…)-->
+		</div>
+	</div>	
+	<div class="zj-feed-items">
+		<ul>
+			<li class="zj-feed-item">
+			external news story
+			</li>
+			<li class="zj-feed-item">
+			new group of destinations added
+			</li>
+			<li class="zj-feed-item">
+			aeon video
+			</li>
+			<li class="zj-feed-item">
+			zj news item
+			</li>
+			<li class="zj-feed-item">
+			gear review
+			</li>
+		</ul>
+	</div>
+
+</div>
+				<div class="zj-apps">
+	<div class="zj-apps-grid">
+		<!--grid of apps<br>
+		groups: discover (gear, destinations, science/research), track/log, learn-->
+
+		<!--"apps" simply reshape a constant interface model -->
+		<!--toggle menu changes between the real apps, both can be expanded
+		case: logbook is universal, its for planning and tracking
+		case: everything can relate to skills/goals/development
+		case: most things have some kind of location, see everything in the context of the map as destinations, where you've been and where you're going
+
+		apps = categories (activitites, projects,)
+		pivot options = context (record, location)
+
+		everything else should fall under editorial/content
+
+		freely navigate between contexts
+		example: exploring map/destinations, some pins have different states – like visited – if I focus that pin I can see that I've been there before, by focussing I can see other related pins (maybe defining a trip) and I can click to see it in a different context
+
+		if an app isn't selected then each context defaults to aggregate
+
+		there should also be affordances for secondary apps [SOLVED WITH APPS/FILTER TOGGLE]
+		where does a flash card app fit in? [SOLVED WITH APPS/FILTER TOGGLE]
+
+		-->
+
+		<span>Toggle Apps or Filters</span>
+		<!--Filters = activities, etc; Apps = Flash card helpers, e-learning modules, etc-->
+
+		<h4 class="zj-apps-group-label">Activity</h4>
+		<div class="zj-apps-group">
+			<a href="#" class="app">
+				<figure class="icn">&#xf3cd;</figure>
+				<h4 class="app-label">Scuba</h4>
+			</a>
+			<a href="#" class="app">
+				<figure class="icn">&#xf3cd;</figure>
+				<h4 class="app-label">Climbing</h4>
+			</a>
+			<a href="#" class="app">
+				<figure class="icn">&#xf3cd;</figure>
+				<h4 class="app-label">Kayaking</h4>
+			</a>
+			<a href="#" class="app">
+				<figure class="icn">&#xf3cd;</figure>
+				<h4 class="app-label">Hiking</h4>
+			</a>
+		</div>
+
+		<h4 class="zj-apps-group-label">Fitness</h4>
+		<div class="zj-apps-group">
+			<a href="#" class="app">
+				<figure class="icn">&#xf315;</figure>
+				<h4 class="app-label">App</h4>
+			</a>
+			<a href="#" class="app">
+				<figure class="icn">&#xf315;</figure>
+				<h4 class="app-label">App</h4>
+			</a>
+			<a href="#" class="app">
+				<figure class="icn">&#xf315;</figure>
+				<h4 class="app-label">App</h4>
+			</a>
+			<a href="#" class="app">
+				<figure class="icn">&#xf315;</figure>
+				<h4 class="app-label">App</h4>
+			</a>
+		</div>
+
+		<h4 class="zj-apps-group-label">Research &amp; Science</h4>
+		<div class="zj-apps-group">
+			<a href="#" class="app">
+				<figure class="icn">&#xf315;</figure>
+				<h4 class="app-label">App</h4>
+			</a>
+			<a href="#" class="app">
+				<figure class="icn">&#xf315;</figure>
+				<h4 class="app-label">App</h4>
+			</a>
+			<a href="#" class="app">
+				<figure class="icn">&#xf315;</figure>
+				<h4 class="app-label">App</h4>
+			</a>
+			<a href="#" class="app">
+				<figure class="icn">&#xf315;</figure>
+				<h4 class="app-label">App</h4>
+			</a>
+		</div>
+	</div>
+</div>
+
+				<!--
+					news/content apps,<br>
+					science/research apps<br>
+					destination apps<br>
+					logbook apps<br>
+					education apps<br>
+					ALL the things that you'd add to a trip
+
+					OR news feed to left, with expanded grid of apps to the left, menu bar can house most common apps
+					example: divelog would go there first, and apps essentially work as filters for everything right of the menu
+					left side could at least be used as our FEED (marketing site could essentially/spatially be left of this).
+
+					A not logged in user could then go from mktg to feed to apps, but only see open content apps, demoes and special messaging encouraging sign up.
+
+					after acct creation other apps would appear in the product grid, access granted to everything else with onboarding lined up.
+				-->
+			</div>
+			
+			<div class="box zj-panel zj-menu">
+	<!-- Default to whatever was open when the user last used -->
+	<a href="#" class="btn toggle-apps icn">&#xf35c;</a>
+	<div class="zj-context">
+		<ul>
+			<li><a href="logbook.html" title="Logbook"><span class="icn">&#xf127;</span>Logbook</a></li>
+			<li><a href="photo.html" title="Destinations"><span class="icn">&#xf203;</span>Destinations</a></li>
+			<li><a href="photo.html" title="Photos"><span class="icn">&#xf148;</span>Photos</a></li>
+			<li><a href="skills.html" title="Skills"><span class="icn">&#xf273;</span>Skills/Goals</a></li>
+			<!--Skill matrix, focussed/zoomed by selected filter/category-->
+			<li><a href="gear.html" title="Gear"><span class="icn">&#xf2ad;</span>Gear</a></li>
+			<!--Gear locker, like trello/itunes, with playlists (gear collections) and whole collection (all gear)-->
+		</ul>
+		<a href="#" class="box zj-link-profile">
+			Profile/Settings
+		</a>
+	</div>
+</div>
+
+			<div class="box zj-panel zj-index">
+				<div class="box zj-index-actions">
+					<a href="#" class="btn toggle-new icn" title="Add">
+						&#xf2c7; <!--Master/top level content creation. New trip, photo album, dive… broad and granular publish fast track -->
+					</a>
+					<a href="#" class="btn toggle-search icn" title="Search">&#xf2f5;</a>
+					<h4 class="zj-context-label" title="current context + app/filter">
+						skills
+						<!--context title. could become breadcrumbs? -->
+					</h4>
+					<!--<input type="text" placeholder="Search Trips">
+					dbl click to expand – could be applied to all the log book fields for editing-->
+				</div>
+
+				
+
+				
+				
+			</div>
+			<div class="box zj-panel zj-cal">
+				<a href="#" class="btn toggle-cal icn">&#xf26e;</a>
+
+				<!--aligns with logbook at left, can control visible content to right -->
+
+			</div>
+			<div class="box zj-panel zj-page">
+				<div class="zj-page-view">
+					<!--contextual filters and view toggles
+					example: for logbook trips, toggle map view on off-->
+				</div>
+				skills matrix
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+    </body>
+
+</html>

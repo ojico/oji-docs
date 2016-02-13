@@ -1,0 +1,24 @@
+.zj-panel {
+	&.zj-cal {
+		@include borders(0,2px,0,0);
+		background-color: black;
+		height: $full;
+		overflow: hidden;
+		position: absolute;
+		width: $width-zj-cal;
+		z-index: 4;
+	
+		.toggle-cal {
+			@include borders(2px,2px,2px,2px);
+			color: white;
+			font-size: $base;
+			left: 0;
+			line-height: $base*2;
+			padding: 0;
+			position: absolute;
+			text-align: center;
+			top: 0;
+			width: $base*2;
+		}
+	}
+}

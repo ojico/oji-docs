@@ -1,0 +1,66 @@
+.docs-wiki {
+	background-color: gold;
+
+	.wiki-sidebar {
+		background-color: #333;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: $xsmall;
+
+		.breadcrumbs {
+			color: #999;
+			line-height: $base*2;
+			padding: 0 $base;
+
+			.link-home {
+				color: #EEE;
+				text-decoration: none;
+			}
+		}
+
+		.wiki-sidebar-group {
+			padding: $base/2 0 $base/2 $base;
+
+			li {
+				color: #999;
+
+				a {
+					border-bottom: solid 1px #444;
+					color: #EEE;
+					display: block;
+					padding: $base/2;
+					padding-left: 0;
+					text-decoration: none;
+
+					&.active {
+						position: relative;
+
+						&::after {
+							background-color: green;
+							border-radius: 50%;
+							content: '';
+							height: $base/4;
+							margin-top: $base/-8;
+							position: absolute;
+							right: $base/2;
+							top: 50%;
+							width: $base/4;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.wiki-container {
+		background-color: red;
+		bottom: 0;
+		overflow-y: scroll;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: $large + $small;
+	}
+}

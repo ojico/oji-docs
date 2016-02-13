@@ -1,0 +1,54 @@
+.zj-apps {
+	@include borders(0,0,0,2px);
+	bottom: 0;
+	left: $large;
+	position: absolute;
+	top: 0;
+	width: $med;
+
+	.zj-apps-grid {
+		background-color: #DDD;
+		bottom: 0;
+		left: 0;
+		overflow-y: scroll;
+		padding: 0 $base 0 $base*4;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		.zj-apps-group-label {
+			@include borders(0,0,2px,0);
+			line-height: $base*2;
+			margin-bottom: $base/2;
+			padding: 0;
+			width: $full;
+		}
+
+		.zj-apps-group {
+	 		@include flexbox();
+			@include align-content(flex-start);
+			@include align-items(flex-start);
+			@include flex-flow(row wrap);
+			@include justify-content(space-between);
+		}
+
+		.app {
+			height: $base*4.5;
+			text-align: center;
+			width: $base*3;
+
+			.icn {
+				color: blue;
+				font-size: $base*1.5;
+				line-height: $base*3;
+				text-align: center;
+				width: $base*3;
+			}
+			.app-label {
+				color: blue;
+				display: block;
+				text-align: center;
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+    {% include head.html %}
+
+    <body class="docs-wireframes">
+
+    	<header class="wf-header">
+    		<h4>
+    			<a href="/index.html">Zoji Docs</a> / <a href="/wireframes/index.html">Wireframes</a> / {% if page.app %}<a href="/wireframes/{{ page.app-url }}">{{ page.app }}</a> / {% endif %}{{ page.title }}
+    			<span class="pull-right wf-tools">
+                    <a href="#" class="toggle-zoom">Toggle States</a>
+                    <!--Turn prototype states on/off
+                    example: new dive added by shop adds alert status to logbook and new dives-->
+                    <a href="#" class="toggle-zoom">Toggle Zoom</a>
+    				<a href="#" class="toggle-notes">Toggle Notes</a>
+                    <a href="#" class="reset-session">Reset Session</a>
+                    <!-- if content (like news feed "new app added" bulletin) is dismissed, restore prototype to default state-->
+    			</span>
+                
+    		</h4>
+    	</header>
+
+        {{ content }}
+
+    </body>
+
+</html>

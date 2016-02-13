@@ -1,0 +1,191 @@
+$width-zj-apps: $full !default;
+$width-zj-menu: $base*3+2 !default;
+$width-zj-index: $med !default;
+$width-zj-cal: $base*2 !default;
+$width-zj-page: $large !default;
+
+.zj-wrapper {
+	
+	&[data-focus='index'] {
+		.zj-panel {
+			@include transitionEase(all, 0.3s);
+			&.zj-apps  {left: $large*-1;}
+			&.zj-menu  {left: 0;}
+			&.zj-index {left: 0;}
+			&.zj-cal   {left: $width-zj-index;}
+			&.zj-page  {left: $med;}
+		}
+	}
+	&[data-focus='apps'] {
+		.zj-panel {
+			@include transitionEase(all, 0.3s);
+			&.zj-apps  {left: 0;}
+			&.zj-menu  {
+				left: $large;
+			}
+			&.zj-cal   {left: $full;}
+			&.zj-index {left: $full;}
+			&.zj-page  {left: $full;}
+		}
+	}
+}
+
+.overlay {
+	background-color: green;
+	bottom: 0;
+	display: none;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 1100;
+
+	&.visible {
+		display: block;
+	}
+}
+
+.zj-wrapper {
+	@include borders(0,2px,0,0);
+	background-color: blue;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	.zj-panel {
+		@include borders(2px,0,2px,2px);
+		@include transitionEase(all, 0.3s);
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		&.zj-menu {
+			margin-left: 0;
+			width: $width-zj-menu;
+			z-index: 5;
+
+			.toggle-apps {
+				@include borders(0,2px,0,0);
+				color: white;
+				display: block;
+				font-size: $base;
+				line-height: $base*2;
+				padding: 0 !important;
+				text-align: center;
+				width: $base*3;
+			}
+
+			.zj-branding {
+				@include flexbox();
+  				@include align-content(center);
+  				@include align-items(center);
+  				@include flex-flow(row wrap);
+  				@include justify-content(center);
+				bottom: $base*2;
+				left: 0;
+				position: absolute;
+				top: 298px;
+				width: $base*3;
+
+				span {
+					@include rotate(-90);
+					font-size: $base;
+					font-weight: 400;
+					line-height: $base;
+					text-align: center;
+					text-transform: lowercase;
+				}
+			}
+
+			.zj-context {
+				@include transitionEase(width, 0.3s);
+				@include borders(0,2px,0,0);
+				background-color: white;
+				bottom: 0;
+				overflow: hidden;
+				position: absolute;
+				top: $base*2;
+				width: $base*3;
+
+				&:hover {
+					@include transitionEase(width, 0.3s);
+					width: $base*10;
+				}
+
+				ul {
+					@include borders(2px,0,0,0);
+	
+					li {
+						a {
+							@include borders(0,0,2px,0);
+							@extend .h2;
+							display: block;
+							line-height: $base*3;
+							padding: 0 $base 0 $base*3;
+							position: relative;
+	
+							.icn {
+								color: blue;
+								font-size: $base*1.5;
+								height: $base*2;
+								left: $base/2;
+								line-height: $base*2;
+								position: absolute;
+								text-align: center;
+								top: $base/2;
+								width: $base*2;
+							}
+
+							&:hover {
+								background-color: green;
+								color: white;
+
+								.icn {
+									color: white;
+								}
+							}
+						}
+					}
+				}
+
+				.zj-link-profile {
+					@include borders(2px,0,0,0);
+					@extend .h4;
+					background-color: blue;
+					color: white;
+					bottom: 0;
+					left: 0;
+					line-height: $base*2;
+					padding: 0 0 0 $base*3;
+					position: absolute;
+					width: $full;
+	
+					&::before {
+						@extend .icn;
+						color: white;
+						content:'\f2f7';
+						font-size: $base;
+						height: $base;
+						left: $base;
+						line-height: $base;
+						position: absolute;
+						top: $base/2;
+						width: $base;
+					}
+				}
+			}
+		}
+
+		&.zj-page {
+			background-color: #222;
+			color: white;
+			padding-left: $width-zj-cal;
+			width: $width-zj-page;
+			z-index: 3;
+		}
+	}
+}

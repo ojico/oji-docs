@@ -1,0 +1,65 @@
+$header-height: $base*2;
+
+@mixin borders($top, $right, $bottom, $left) {
+	border-bottom: solid #{$bottom} black;
+	border-left: solid #{$left} black;
+	border-right: solid #{$right} black;
+	border-top: solid #{$top} black;
+}
+
+.docs-wireframes {
+	background-color: #DDD;
+}
+
+.wf-header {
+	padding: 0 $base;
+
+	h4 {
+		color: #AAA;
+		line-height: $header-height;
+
+		a {
+			color: #888;
+			text-decoration: none;
+
+			&:hover {
+				color: #888;
+			}
+		}
+	}
+}
+
+.wf-page {
+
+	.wf-canvas {
+		background-color: white;
+		bottom: $base;
+		box-shadow: 0 0 $base/2 rgba(0,0,0,0.2);
+		left: $base;
+		overflow: hidden;
+		overflow-y: scroll;
+		position: absolute;
+		top: $base*2;
+		right: $base;
+
+		&.zoom-canvas {
+			bottom: 0;
+			left: 0;
+			top: 0;
+			right: 0
+		}
+
+		.btn {
+			background-color: blue;
+			color: white;
+			padding: $base/2;
+
+			&:visited {
+				color: white;
+			}
+		}
+	}
+
+	.box {
+	}
+}

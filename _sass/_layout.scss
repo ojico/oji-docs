@@ -1,0 +1,45 @@
+.oj__docs {
+    overflow: hidden;
+}
+
+.oj__menu {
+    background-color: rgba(0,0,0,0.5);
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: $small;
+    z-index: 1000;
+
+    ul {
+        padding: $base;
+
+        a {
+            color: white;
+        }
+    }
+}
+
+.moodboard {
+    @include flexbox();
+    @include align-content(flex-start);
+    @include align-items(flex-start);
+    @include flex-flow(row wrap);
+    @include justify-content(stretch);
+    background-color: yellow;
+    bottom: 0;
+    left: 0;
+    overflow-y: scroll;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    figure {
+        background-color: lime;
+        background-position: center;
+        background-size: cover;
+        height: $base*10;
+        width: $small;
+    }
+}

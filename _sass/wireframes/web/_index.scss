@@ -1,0 +1,152 @@
+.zj-panel {
+	&.zj-index {
+		background-color: #DDD;
+		overflow: scroll-y;
+		padding-left: 0;
+		width: $width-zj-index;
+		z-index: 2;
+	
+		.zj-index-actions {
+	 		@include flexbox();
+			@include align-content(flex-start);
+			@include align-items(flex-start);
+			@include flex-flow(row wrap);
+			@include justify-content(flex-start);
+			background-color: white;
+			height: $base*2;
+			padding-left: $base*3;
+	
+			.btn {
+				@include borders(0,2px,0,0);
+				color: white;
+				font-size: $base;
+				line-height: $base*2;
+				padding: 0;
+				text-align: center;
+				width: $base*2;
+			}
+	
+			.zj-context-label {
+				line-height: $base*2;
+				position: absolute;
+				right: $base;
+				top: 0;
+			}
+		}
+	
+		.zj-log {
+			@include borders(2px,0,0,0);
+			padding: $base $base 0 $base*4;
+	
+	
+	
+			.zj-log-group-label {
+				@include borders(0,0,2px,0);
+				cursor: pointer;
+				line-height: $base;
+				position: relative;
+				text-align: center;
+
+				&::before {
+					@extend .icn;
+					content: '\f123';
+					left: 0;
+					line-height: $base;
+					padding: 0 $base/4;
+					position: absolute;
+					top: 0;
+				}
+
+				&:hover {
+					color: blue;
+				}
+
+				&.open {
+					&::before {
+						content: '\f126';
+					}
+				}
+			}
+	
+			> .zj-log-group {
+				@include borders(0,2px,0,2px);
+				display: none;
+	
+				&.visible {
+					display: block;
+				}
+	
+				> .zj-trip {
+					@include borders(0,0,2px,0);
+					position: relative;
+	
+					.zj-trip-name {
+						@extend .h4;
+						background-color: white;
+						display: block;
+						line-height: $base*2;
+						position: relative;
+						padding: 0 $base/2;
+						text-align: center;
+					}
+	
+					.zj-trip-add,
+					.zj-trip-expand {
+						background-color: transparent;
+						color: blue;
+						font-size: $base;
+						line-height: $base*2;
+						opacity: 0;
+						padding: 0;
+						position: absolute;
+						top: 0;
+						text-align: center;
+						width: $base*2;
+					}
+					.zj-trip-add {
+						left: 0;
+					}
+					.zj-trip-expand {
+						right: 0;
+					}
+	
+					&:hover,
+					&.active {
+						.zj-trip-add,
+						.zj-trip-expand {
+							opacity: 1;
+						}
+					}
+					&.active {
+						.child {
+							display: block;
+						}
+					}
+	
+					.child {
+						@include borders(2px,0,0,0);
+						background-color: white;
+						display: none;
+	
+						> li {
+	
+							&:last-child {
+								a {
+									border-bottom: 0;
+								}
+							}
+	
+							> a {
+								@extend .h3;
+								border-bottom: dashed 2px black;
+								display: block;
+								line-height: $base*2;
+								padding: 0 $base/2;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

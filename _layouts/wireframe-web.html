@@ -1,0 +1,75 @@
+---
+layout: wireframes
+---
+
+<div class="wf-page">
+	<div class="wf-canvas">
+
+		<div class="overlay overlay-search">Search</div>
+
+		<div class="zj-wrapper" data-focus="index">
+
+			<div class="box zj-panel zj-dash">
+				{% include wireframes/feed.html %}
+				{% include wireframes/apps.html %}
+				<!--
+					news/content apps,<br>
+					science/research apps<br>
+					destination apps<br>
+					logbook apps<br>
+					education apps<br>
+					ALL the things that you'd add to a trip
+
+					OR news feed to left, with expanded grid of apps to the left, menu bar can house most common apps
+					example: divelog would go there first, and apps essentially work as filters for everything right of the menu
+					left side could at least be used as our FEED (marketing site could essentially/spatially be left of this).
+
+					A not logged in user could then go from mktg to feed to apps, but only see open content apps, demoes and special messaging encouraging sign up.
+
+					after acct creation other apps would appear in the product grid, access granted to everything else with onboarding lined up.
+				-->
+			</div>
+			
+			{% include wireframes/menu.html %}
+
+			<div class="box zj-panel zj-index">
+				<div class="box zj-index-actions">
+					<a href="#" class="btn toggle-new icn" title="Add">
+						&#xf2c7; <!--Master/top level content creation. New trip, photo album, dive… broad and granular publish fast track -->
+					</a>
+					<a href="#" class="btn toggle-search icn" title="Search">&#xf2f5;</a>
+					<h4 class="zj-context-label" title="current context + app/filter">
+						{{ page.title }}
+						<!--context title. could become breadcrumbs? -->
+					</h4>
+					<!--<input type="text" placeholder="Search Trips">
+					dbl click to expand – could be applied to all the log book fields for editing-->
+				</div>
+
+				{% if page.title == 'logbook' %}
+				{% include wireframes/index-logbook.html %}
+				{% endif %}
+
+				{% if page.title == 'photos' %}
+				{% include wireframes/index-photos.html %}
+				{% endif %}
+				
+			</div>
+			<div class="box zj-panel zj-cal">
+				<a href="#" class="btn toggle-cal icn">&#xf26e;</a>
+
+				<!--aligns with logbook at left, can control visible content to right -->
+
+			</div>
+			<div class="box zj-panel zj-page">
+				<div class="zj-page-view">
+					<!--contextual filters and view toggles
+					example: for logbook trips, toggle map view on off-->
+				</div>
+				{{ content }}
+			</div>
+
+		</div>
+
+	</div>
+</div>
